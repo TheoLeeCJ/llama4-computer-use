@@ -6,9 +6,9 @@
 Llama 4 Affordable Computer Use Agent
 </h1>
 
-<center>
+<div align="center">
 <b><i>Computer use doesn't have to cost $3-$15 per million tokens</i></b>
-</center>
+</div>
 
 <br>
 
@@ -62,7 +62,7 @@ Therefore, I decided to experiment with combining Llama 4 Maverick's vision capa
 **Most importantly, if you try it out, ensure that you are running the agent in an isolated, separate environment like a Docker container or Linux virtual machine.**
 
 1. Ensure your virtual machine or isolated environment has `scrot` and `xdotool`, which the agent uses to get screenshots and execute commands respectively. It also needs `python3` and the Python `requests` library.
-2. Set your API keys and endpoints in config.json.
+2. Set your API keys and endpoints in `config.json`, as a template copied from `config-base.json`.
    - Needs a Llama 4 (preferably Maverick, not Scout) API and UI-TARS API
    - UI-TARS 7B DPO worked best for me, better than 72B
    - Configure maximum steps too if you wish
@@ -72,11 +72,11 @@ Therefore, I decided to experiment with combining Llama 4 Maverick's vision capa
 
 # Online Demo
 
-(coming soon!)
+(coming soon, star and watch for updates!)
 
 # Benchmarks
 
-Not carried out yet. Check out the trajectories for a rough idea of its capabilities.
+Not carried out yet. May be coming soon. Check out the trajectories for a rough idea of its capabilities.
 
 ## Successful Tasks:
 - Browsing the Web Archive
