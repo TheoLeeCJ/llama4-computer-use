@@ -68,6 +68,7 @@ Refer to documented interaction trajectories to understand its capabilities and 
 - Llama 4 Maverick can be used for $0.2/million input tokens and $0.6/million output tokens on DeepInfra (as of 7th April 2025)
   - ... or even self-hosted!
 - UI-TARS can be run locally
+- it may not have the performance of other computer use agents, but it sure is quite affordable
 
 ---
 
