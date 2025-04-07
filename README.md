@@ -30,17 +30,6 @@ Check out sample trajectories in the trajectory explorer at https://llama4.pages
 
 # Local Quick Start
 
-> ## **Caution:**
->
-> The agent currently makes no attempt to prevent you from conducting tasks which may be destructive or impactful (e.g. deleting files or emails). If you use it, you must monitor it closely to prevent it from conducting actions which may be harmful!
-> 1. The agent may make mistakes or take unintended actions 
-> 2. All suggested actions should be carefully reviewed before execution
-> 3. You should only run this agent in an isolated environment (e.g. virtual machine or isolated Docker container)
-> 4. Do not allow access to sensitive data or systems or send spam
-> 5. Refer to documented interaction trajectories to understand its capabilities and shortcomings: https://llama4.pages.dev. **Trajectories are only a rough indicator of the performance, and minor environmental differences and run-to-run-variation may cause hugely differing results.**
-
-(A guide on using Docker to run the agent safely in an isolated environment is coming soon.)
-
 **Most importantly, if you try it out, ensure that you are running the agent in an isolated, separate environment like a Docker container or Linux virtual machine.**
 
 1. Ensure your virtual machine or isolated environment has `scrot` and `xdotool`, which the agent uses to get screenshots and execute commands respectively. It also needs `python3` and the Python `requests` library.
@@ -52,6 +41,17 @@ Check out sample trajectories in the trajectory explorer at https://llama4.pages
 3. Boot Google Chrome or Firefox or any other app you want the agent to use
    - Launch the app before running the agent for best results
 4. Run `DISPLAY=:0 python3 llama4_agent.py` and try it out!
+
+> ## **Caution:**
+>
+> The agent currently makes no attempt to prevent you from conducting tasks which may be destructive or impactful (e.g. deleting files or emails). If you use it, you must monitor it closely to prevent it from conducting actions which may be harmful!
+> 1. The agent may make mistakes or take unintended actions 
+> 2. All suggested actions should be carefully reviewed before execution
+> 4. Do not allow access to sensitive data
+
+Refer to documented interaction trajectories to understand its capabilities and shortcomings: https://llama4.pages.dev. **Trajectories are only a rough indicator of the performance, and minor environmental differences and run-to-run-variation may cause hugely differing results.**
+
+(A guide on using Docker to run the agent safely in an isolated environment is coming soon.)
 
 # Features
 
