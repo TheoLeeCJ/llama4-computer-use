@@ -71,7 +71,7 @@ Check out sample trajectories in the trajectory explorer at https://llama4.pages
 
 ---
 
-![GIF showing the agent in action](https://llama4.pages.dev/demo.gif)
+![GIF showing the agent in action](img/demo.gif)
 
 ---
 
