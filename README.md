@@ -32,12 +32,12 @@ Check out sample trajectories in the trajectory explorer at https://llama4.pages
 
 > ## **Caution:**
 >
-> The agent currently makes no attempt to prevent you from conducting tasks which may be destructive or impactful (e.g. deleting files or emails). You must monitor it closely to prevent it from conducting actions which may be harmful!
+> The agent currently makes no attempt to prevent you from conducting tasks which may be destructive or impactful (e.g. deleting files or emails). If you use it, you must monitor it closely to prevent it from conducting actions which may be harmful!
 > 1. The agent may make mistakes or take unintended actions 
 > 2. All suggested actions should be carefully reviewed before execution
 > 3. You should only run this agent in an isolated environment (e.g. virtual machine or isolated Docker container)
 > 4. Do not allow access to sensitive data or systems or send spam
-> 5. Refer to documented interaction trajectories to understand its capabilities and shortcomings: https://llama4.pages.dev. **Trajectories are only a rough indicator of the performance, and run-to-run-variation may cause differing results.**
+> 5. Refer to documented interaction trajectories to understand its capabilities and shortcomings: https://llama4.pages.dev. **Trajectories are only a rough indicator of the performance, and minor environmental differences and run-to-run-variation may cause hugely differing results.**
 
 (A guide on using Docker to run the agent safely in an isolated environment is coming soon.)
 
@@ -68,6 +68,10 @@ Check out sample trajectories in the trajectory explorer at https://llama4.pages
 - Llama 4 Maverick can be used for $0.2/million input tokens and $0.6/million output tokens on DeepInfra (as of 7th April 2025)
   - ... or even self-hosted!
 - UI-TARS can be run locally
+
+---
+
+![GIF showing the agent in action](https://llama4.pages.dev/demo.gif)
 
 ---
 
