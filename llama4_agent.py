@@ -139,7 +139,7 @@ class Llama4Agent:
         }
 
         response = requests.post(
-            f"{self.config["uitarsApiUrl"]}/chat/completions",
+            f"{self.config['uitarsApiUrl']}/chat/completions",
             headers={
                 "Authorization": f"Bearer {self.config['uitarsApiKey']}",
                 "Content-Type": "application/json"

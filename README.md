@@ -3,11 +3,11 @@
 <br>
 
 <h1 align="center">
-Llama 4 Affordable Computer Use Agent
+🤑 Llama 4 Affordable Computer Use Agent
 </h1>
 
 <div align="center">
-<b><i>Computer use doesn't have to cost $3-$15 per million tokens</i></b>
+<b><i>because computer use doesn't have to cost $3-$15 per million tokens</i></b>
 </div>
 
 <br>
@@ -24,11 +24,34 @@ Check out sample trajectories in the trajectory explorer at https://llama4.pages
 
 ![Image of the trajectory explorer](img/explorer.png)
 
-## Rationale
+# Online Demo
 
-Computer use-capable models like Claude 3.7 Sonnet are closed source and costly to use. Promising open models like Bytedance Research's UI-TARS can be less adept at planning and executing a task, but excel at UI grounding - giving coordinates of a UI element from a description.
+(coming soon, star and watch for updates!)
 
-Therefore, I decided to experiment with combining Llama 4 Maverick's vision capabilties with UI-TARS 7B-DPO for UI grounding to produce an efficient, **affordable** computer use agent.
+# Local Quick Start
+
+> ## **Caution:**
+>
+> The agent currently makes no attempt to prevent you from conducting tasks which may be destructive or impactful (e.g. deleting files or emails). You must monitor it closely to prevent it from conducting actions which may be harmful!
+> 1. The agent may make mistakes or take unintended actions 
+> 2. All suggested actions should be carefully reviewed before execution
+> 3. You should only run this agent in an isolated environment (e.g. virtual machine or isolated Docker container)
+> 4. Do not allow access to sensitive data or systems or send spam
+> 5. Refer to documented interaction trajectories to understand its capabilities and shortcomings: https://llama4.pages.dev. **Trajectories are only a rough indicator of the performance, and run-to-run-variation may cause differing results.**
+
+(A guide on using Docker to run the agent safely in an isolated environment is coming soon.)
+
+**Most importantly, if you try it out, ensure that you are running the agent in an isolated, separate environment like a Docker container or Linux virtual machine.**
+
+1. Ensure your virtual machine or isolated environment has `scrot` and `xdotool`, which the agent uses to get screenshots and execute commands respectively. It also needs `python3` and the Python `requests` library.
+   - Usage of `scrot` may mean you need to use Xorg
+2. Set your API keys and endpoints in `config.json`, as a template copied from `config-base.json`.
+   - Needs a Llama 4 (preferably Maverick, not Scout) API and UI-TARS API
+   - UI-TARS 7B DPO worked best for me, better than 72B
+   - Configure maximum steps too if you wish
+3. Boot Google Chrome or Firefox or any other app you want the agent to use
+   - Launch the app before running the agent for best results
+4. Run `DISPLAY=:0 python3 llama4_agent.py` and try it out!
 
 # Features
 
@@ -46,33 +69,13 @@ Therefore, I decided to experiment with combining Llama 4 Maverick's vision capa
   - ... or even self-hosted!
 - UI-TARS can be run locally
 
-# Quick Start
+---
 
-> ## **Caution:**
->
-> The agent currently makes no attempt to prevent you from conducting tasks which may be destructive or impactful (e.g. deleting files or emails). You must monitor it closely to prevent it from conducting actions which may be harmful!
-> 1. The agent may make mistakes or take unintended actions 
-> 2. All suggested actions should be carefully reviewed before execution
-> 3. You should only run this agent in an isolated environment (e.g. virtual machine or isolated Docker container)
-> 4. Do not allow access to sensitive data or systems
-> 5. Refer to documented interaction trajectories to understand its capabilities and shortcomings
+# Rationale
 
-(A guide on using Docker to run the agent safely in an isolated environment is coming soon.)
+Computer use-capable models like Claude 3.7 Sonnet are closed source and costly to use. Promising open models like Bytedance Research's UI-TARS can be less adept at planning and executing a task, but excel at UI grounding - giving coordinates of a UI element from a description.
 
-**Most importantly, if you try it out, ensure that you are running the agent in an isolated, separate environment like a Docker container or Linux virtual machine.**
-
-1. Ensure your virtual machine or isolated environment has `scrot` and `xdotool`, which the agent uses to get screenshots and execute commands respectively. It also needs `python3` and the Python `requests` library.
-2. Set your API keys and endpoints in `config.json`, as a template copied from `config-base.json`.
-   - Needs a Llama 4 (preferably Maverick, not Scout) API and UI-TARS API
-   - UI-TARS 7B DPO worked best for me, better than 72B
-   - Configure maximum steps too if you wish
-3. Boot Google Chrome or Firefox or any other app you want the agent to use
-   - Launch the app before running the agent for best results
-4. Run python3 llama4_agent.py and try it out!
-
-# Online Demo
-
-(coming soon, star and watch for updates!)
+Therefore, I decided to experiment with combining Llama 4 Maverick's vision capabilties with UI-TARS 7B-DPO for UI grounding to produce an efficient, **affordable** computer use agent.
 
 # Benchmarks
 
@@ -90,13 +93,14 @@ Not carried out yet. May be coming soon. Check out the trajectories for a rough 
 - Longer websites (e.g. long pricing pages)
 
 ## Contributing trajectories
-We would love to have more successful / unsuccessful trajectories, please share them in a GitHub issue if you would like them featured in the [online trajectory explorer](https://llama4.pages.dev)!
+We would love to have more successful / unsuccessful trajectories, if you are willing and able to, please share them in a GitHub issue if you would like them featured in the [online trajectory explorer](https://llama4.pages.dev)!
 
 # File Structure
 
 ```
-llama4_agent.py   <--- main agent and tool implementations
-llama4-prompt.txt <--- contains the main system prompt
+llama4_agent.py          <--- main agent and tool implementations
+llama4-prompt.txt        <--- contains the main system prompt
+llama4-agent-original.js <--- original Node.js version before Python rewrite
 prompts/
 - (one JSON file for each defined tool)
 ```
@@ -106,6 +110,7 @@ Tool definitions from prompts/ are combined into one blob and substituted into t
 # Todo
 
 - Token counting and calculation
+- FURTHER efficiency improvements in mind 🤯
 - Improvements to accuracy
 - Benchmarking
 - More trajectories
