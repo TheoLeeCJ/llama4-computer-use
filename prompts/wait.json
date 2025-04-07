@@ -1,0 +1,16 @@
+{
+  "type": "function",
+  "function": "wait",
+  "description": "Waits a specified number of seconds. 5 is often a sensible value.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "seconds": {
+        "type": "number",
+        "description": "Number of seconds to wait"
+      }
+    },
+    "required": ["seconds"],
+    "additionalProperties": false
+  }
+}

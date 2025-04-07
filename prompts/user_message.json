@@ -1,0 +1,24 @@
+{
+  "type": "function",
+  "function": "user_message",
+  "description": "Used to send an alert message to user which blocks the interaction, can ask for input or actions such as logging in to a website.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "message": {
+        "type": "string",
+        "description": "Message you want to show to the user."
+      },
+      "inputRequired": {
+        "type": "boolean",
+        "description": "Whether you expect the user to type something back."
+      },
+      "isLogin": {
+        "type": "boolean",
+        "description": "Whether you are asking the user to login to something."
+      }
+    },
+    "required": ["message", "inputRequired", "isLogin"],
+    "additionalProperties": false
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "type": "function",
+  "function": "computer_type",
+  "description": "Only types on the keyboard.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "text": {
+        "type": "string",
+        "description": "Text to type on the keyboard"
+      },
+      "pressEnter": {
+        "type": "boolean",
+        "description": "Whether to press enter after typing."
+      }
+    },
+    "required": ["text", "pressEnter"],
+    "additionalProperties": false
+  }
+}

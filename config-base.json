@@ -1,0 +1,12 @@
+{
+    "uitarsApiUrl": "http://localhost:8080/api/v1",
+    "uitarsModelName": "bytedance-research/UI-TARS-7B-DPO",
+    "uitarsApiKey": "...",
+    
+    "llama4ApiUrl": "https://api.together.ai/v1",
+    "llama4ModelName": "meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8",
+    "llama4ApiKey": "...",
+
+    "realScreenSize": [1600, 900],
+    "maxSteps": 25
+}

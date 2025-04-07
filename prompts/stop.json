@@ -1,0 +1,16 @@
+{
+  "type": "function",
+  "function": "stop",
+  "description": "To be called when you have achieved the user's initial objective.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "result": {
+        "type": "string",
+        "description": "Message detailing the task execution result and any information user requested (if any)."
+      }
+    },
+    "required": ["result"],
+    "additionalProperties": false
+  }
+}

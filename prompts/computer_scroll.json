@@ -1,0 +1,21 @@
+{
+  "type": "function",
+  "function": "computer_scroll",
+  "description": "Positions cursor over specified element and scrolls up or down.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "elementDescription": {
+        "type": "string",
+        "description": "Accurate and unique description of the UI element to position cursor over before scrolling."
+      },
+      "direction": {
+        "type": "string",
+        "description": "Direction to scroll",
+        "enum": ["up", "down"]
+      }
+    },
+    "required": ["elementDescription", "direction"],
+    "additionalProperties": false
+  }
+}

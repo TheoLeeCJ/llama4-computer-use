@@ -1,0 +1,21 @@
+{
+  "type": "function",
+  "function": "computer_click",
+  "description": "Clicks or hovers on the element with the specified description. Your description must be accurate and unique.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "elementDescription": {
+        "type": "string",
+        "description": "Accurate and unique description of the UI element to click or hover on to visually locate it."
+      },
+      "details": {
+        "type": "string",
+        "description": "hoverOnly doesn't click. The rest are self explanatory.",
+        "enum": ["hoverOnly", "leftClick", "rightClick", "doubleClick"]
+      }
+    },
+    "required": ["elementDescription"],
+    "additionalProperties": false
+  }
+}

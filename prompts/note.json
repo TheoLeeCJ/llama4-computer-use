@@ -1,0 +1,16 @@
+{
+  "type": "function",
+  "function": "note",
+  "description": "Takes down important information for completing the objective later on. It is stored persistently in your memory.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "note": {
+        "type": "string",
+        "description": "Data to take note of"
+      }
+    },
+    "required": ["note"],
+    "additionalProperties": false
+  }
+}
