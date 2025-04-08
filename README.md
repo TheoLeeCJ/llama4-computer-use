@@ -28,6 +28,10 @@ Check out sample trajectories in the trajectory explorer at https://llama4.pages
 
 (coming soon, star and watch for updates!)
 
+https://forms.gle/rmGEJjYZ8JZX8BN17
+
+^ be the first to be notified when the online demo is ready
+
 # Local Quick Start
 
 **Most importantly, if you try it out, ensure that you are running the agent in an isolated, separate environment like a Docker container or Linux virtual machine.**
