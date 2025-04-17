@@ -7,14 +7,14 @@
 </h1>
 
 <div align="center">
-<b><i>because computer use doesn't have to cost $3-$15 per million tokens</i></b>
+<b><i>because computer use doesn't have to be expensive</i></b>
 </div>
 
 <br>
 
 # Overview
 
-This is a simple implementation of a computer use agent powered by [**Meta's Llama 4 Maverick**](https://ai.meta.com/blog/llama-4-multimodal-intelligence/) and [**Bytedance Research's UI-TARS 7B-DPO**](https://github.com/bytedance/UI-TARS). It supports human-in-the-loop operation with acceptance / rejection of actions and user feedback.
+This is a simple implementation of a computer use agent powered by [**Meta's Llama 4 Maverick**](https://ai.meta.com/blog/llama-4-multimodal-intelligence/) (supports any OpenAI-compatible provider) and [**Bytedance Research's UI-TARS 7B-DPO**](https://github.com/bytedance/UI-TARS). It supports human-in-the-loop operation with acceptance / rejection of actions and user feedback.
 
 It uses Llama 4's vision capabilties to analyse the screenshot and UI-TARS for obtaining UI element coordinates for clicking.
 
@@ -39,7 +39,7 @@ https://forms.gle/rmGEJjYZ8JZX8BN17
 1. Ensure your virtual machine or isolated environment has `scrot` and `xdotool`, which the agent uses to get screenshots and execute commands respectively. It also needs `python3` and the Python `requests` library.
    - Usage of `scrot` may mean you need to use Xorg
 2. Set your API keys and endpoints in `config.json`, as a template copied from `config-base.json`.
-   - Needs a Llama 4 (preferably Maverick, not Scout) API and UI-TARS API
+   - Needs a Llama 4 (preferably Maverick, not Scout) API (or any OpenAI compatible provider) and UI-TARS API
    - UI-TARS 7B DPO worked best for me, better than 72B
    - Configure maximum steps too if you wish
 3. Boot Google Chrome or Firefox or any other app you want the agent to use
@@ -71,8 +71,10 @@ Refer to documented interaction trajectories to understand its capabilities and 
 ## 🤑 Affordable
 - Llama 4 Maverick can be used for $0.2/million input tokens and $0.6/million output tokens on DeepInfra (as of 7th April 2025)
   - ... or even self-hosted!
+- for better capabilities, **vision reasoning models** like OpenAI o4-mini can be used at $0.275 / million input tokens (with caching, which computer use can leverage)
 - UI-TARS can be run locally
 - it may not have the performance of other computer use agents, but it sure is quite affordable
+- opens up computer use to cheaper, smaller models
 
 ---
 
@@ -84,7 +86,7 @@ Refer to documented interaction trajectories to understand its capabilities and 
 
 Computer use-capable models like Claude 3.7 Sonnet are closed source and costly to use. Promising open models like Bytedance Research's UI-TARS can be less adept at planning and executing a task, but excel at UI grounding - giving coordinates of a UI element from a description.
 
-Therefore, I decided to experiment with combining Llama 4 Maverick's vision capabilties with UI-TARS 7B-DPO for UI grounding to produce an efficient, **affordable** computer use agent.
+Therefore, I decided to experiment with combining Llama 4 Maverick's (or even other vision reasoning models like o4-mini's) vision capabilties with UI-TARS 7B-DPO for UI grounding to produce an efficient, **affordable** computer use agent.
 
 # Benchmarks
 
@@ -96,10 +98,12 @@ Not carried out yet. May be coming soon. Check out the trajectories for a rough 
 - Interacting with simple web applications
 - Interacting with the OS file picker
 - Online grammar quiz (26 steps)
+- Online shopping (20 steps)
 
 ## Unsuccessful Tasks (so far):
 - More complicated web applications
 - Longer websites (e.g. long pricing pages)
+- Navigating LibreOffice Impress (making slideshows)
 
 ## Contributing trajectories
 We would love to have more successful / unsuccessful trajectories, if you are willing and able to, please share them in a GitHub issue if you would like them featured in the [online trajectory explorer](https://llama4.pages.dev)!
@@ -124,6 +128,7 @@ Tool definitions from prompts/ are combined into one blob and substituted into t
 - Benchmarking
 - More trajectories
 - More of everything, really
+- **Testing with o4-mini**
 
 ---
 
